@@ -7,7 +7,8 @@ const seedDB=async()=>{
 
     // Year instances
     const years = [
-        {date:'2022'}
+        {date:'2022'},
+        {date:'1984'},
     ];
     const yearPromises = years.map((year)=>Year.create(year));
     const [year_2022] = await Promise.all(yearPromises);
