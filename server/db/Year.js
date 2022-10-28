@@ -3,9 +3,16 @@ const db = require("./db");
 
 const Year = db.define("year", {
     date:{
-        type:Sequelize.STRING,
+        type:Sequelize.STRING(),
         allowNull:false,
-        unique:true
+        unique:true,
+        validate:{
+            length(date){
+                if (date.length<4 || date.length>4) {
+                  throw new Error('Only values 4 characters in length allowed!');
+                }
+            }
+        }
     }
 });
 
