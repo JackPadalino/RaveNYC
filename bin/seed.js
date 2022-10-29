@@ -60,12 +60,12 @@ const seedDB=async()=>{
 
     // Event instances
     const events = [
-        {artist:'Township Rebellion',venue:'Brooklyn Monarch',dayId:january_01_2022.id},
-        {artist:'Snerd',venue:'Brooklyn Monarch',dayId:january_02_2022.id},
-        {artist:'DJ Sasha',venue:'Avante Gardner',dayId:february_01_2022.id},
-        {artist:'Modern Bohemia',venue:'Avante Gardner',dayId:february_02_2022.id},
-        {artist:'Anjuna Deep',venue:'Brooklyn Mirage',dayId:march_01_2022.id},
-        {artist:'BAM',venue:'Brooklyn Mirage',dayId:march_02_2022.id}
+        {artist:'Township Rebellion',venue:'Brooklyn Monarch',dayId:january_01_2022.id,monthId:january_2022.id},
+        {artist:'Snerd',venue:'Brooklyn Monarch',dayId:january_02_2022.id,monthId:january_2022.id},
+        {artist:'DJ Sasha',venue:'Avante Gardner',dayId:february_01_2022.id,monthId:february_2022.id},
+        {artist:'Modern Bohemia',venue:'Avante Gardner',dayId:february_02_2022.id,monthId:february_2022.id},
+        {artist:'Anjuna Deep',venue:'Brooklyn Mirage',dayId:march_01_2022.id,monthId:march_2022.id},
+        {artist:'BAM',venue:'Brooklyn Mirage',dayId:march_02_2022.id,monthId:march_2022.id}
 
     ];
     const eventPromises = events.map((event)=>Event.create(event));
