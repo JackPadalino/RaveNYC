@@ -1,21 +1,25 @@
 const {
-    db,Year,Month,Day,Event
+    db,
+    //Year,
+    Month,
+    Day,
+    Event
 } = require('../server/db');
 
 const seedDB=async()=>{
     await db.sync({force:true,logging:false});
 
-    // Year instances
-    const years = [
-        {date:'2022'},
-        {date:'2023'},
-    ];
-    const yearPromises = years.map((year)=>Year.create(year));
-    const [year_2022] = await Promise.all(yearPromises);
+    // // Year instances
+    // const years = [
+    //     {date:'2022'},
+    //     {date:'2023'},
+    // ];
+    // const yearPromises = years.map((year)=>Year.create(year));
+    // const [year_2022] = await Promise.all(yearPromises);
 
     // Month instances
     const months = [
-        {date:'January',yearId:year_2022.id},
+        {date:'January'},
         //{date:'February',yearId:year_2022.id},
         //{date:'March',yearId:year_2022.id},
     ];
