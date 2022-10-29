@@ -52,4 +52,19 @@ router.post('/create',async(req,res,next)=>{
     };
 });
 
+// month/delete/:id
+router.delete('/delete/:id',async(req,res,next)=>{
+    const monthId = req.params.id;
+    try{
+        await Month.destroy({
+            where:{
+                id:monthId
+            }
+        });
+        res.sendStatus(204);
+    }catch(error){
+        next(error)
+    };
+});
+
 module.exports = router;

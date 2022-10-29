@@ -49,4 +49,19 @@ router.post('/create',async(req,res,next)=>{
     };
 });
 
+// event/delete/:id
+router.delete('/delete/:id',async(req,res,next)=>{
+    const eventId = req.params.id;
+    try{
+        await Event.destroy({
+            where:{
+                id:eventId
+            }
+        });
+        res.sendStatus(204);
+    }catch(error){
+        next(error)
+    };
+});
+
 module.exports = router;
