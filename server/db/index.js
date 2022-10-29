@@ -11,6 +11,9 @@ Year.hasMany(Month);
 Day.belongsTo(Month)
 Month.hasMany(Day)
 
+Event.belongsTo(Month);
+Month.hasMany(Event);
+
 Event.belongsTo(Day);
 Day.hasMany(Event);
 
