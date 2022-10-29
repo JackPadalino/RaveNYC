@@ -7,7 +7,7 @@ const Day = db.define("day", {
         allowNull:false,
         validate:{
             min:1,
-            max:42
+            max:31
         }
     }
 });

@@ -40,7 +40,7 @@ router.post('/create',async(req,res,next)=>{
             yearId:yearId
         });
         const days=[];
-        for(let i=1;i<43;i++){
+        for(let i=1;i<32;i++){
             const day={date:i,monthId:newMonth.id};
             days.push(day);
         };
