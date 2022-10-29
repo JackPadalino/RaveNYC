@@ -6,15 +6,13 @@ const {
 } = require('../db');
 
 // day/:id
-router.get('/:monthId/:date',async(req,res,next)=>{
-    const monthId = req.params.monthId;
-    const date = req.params.date;
+//router.get('/:monthId/:date',async(req,res,next)=>{
+router.get('/:id',async(req,res,next)=>{
+    // const monthId = req.params.monthId;
+    // const date = req.params.date;
+    const dayId = req.params.id;
     try{
-        const day = await Day.findOne({
-            where:{
-                monthId:monthId,
-                date:date
-            },
+        const day = await Day.findByPk(dayId,{
             include:[Month,Event]
         });
         res.send(day);

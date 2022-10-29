@@ -25,7 +25,7 @@ const seedDB=async()=>{
     // January Day instances
     const january_days=[];
     for(let i=1;i<32;i++){
-        const day={date:i,monthId:january_2022.id};
+        const day={monthId:january_2022.id};
         january_days.push(day);
     };
     const januaryPromises = january_days.map((day)=>Day.create(day));

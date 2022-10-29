@@ -41,7 +41,7 @@ router.post('/create',async(req,res,next)=>{
         });
         const days=[];
         for(let i=1;i<32;i++){
-            const day={date:i,monthId:newMonth.id};
+            const day={monthId:newMonth.id};
             days.push(day);
         };
         const promises = days.map((day)=>Day.create(day));
