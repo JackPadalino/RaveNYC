@@ -2,7 +2,7 @@
 
 Calendar app for all electronic events happening in NYC by month
 
-##### Next steps
+### Next steps
 - Add UUID for all DB models instead of integer PK's
 - React notes - 
     - MUI React components (similar to Bootstrap)
