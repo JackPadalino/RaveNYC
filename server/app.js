@@ -8,6 +8,7 @@ const app = express();
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static(__dirname + '/public'));
 app.use(methodOverride('_method'));
+app.use(express.json());
 app.use(volleyball);
 app.use('/',appRouter);
 

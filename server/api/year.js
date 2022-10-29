@@ -2,46 +2,40 @@ const express = require('express');
 const router = express.Router();
 
 const {
-    Month,Day,Event
+    Year,Month,Day,Event
 } = require('../db');
 
-// event/
+// year/
 router.get('/',async(req,res,next)=>{
     try{
-        const events = await Event.findAll({
+        const years = await Year.findAll({
             //include:[Day,Event]
         });
-        res.send(events);
+        res.send(years);
     }catch(error){
         next('Oops! Something went wrong!')
     };
 });
 
-// event/:id
+// year/:id
 router.get('/:id',async(req,res,next)=>{
-    const eventId = req.params.id;
+    const yearId = req.params.id;
     try{
-        const event = await Event.findByPk(eventId,{
-            include:[Month,Day]
+        const year = await Year.findByPk(yearId,{
+            //include:[Month]
         });
-        res.send(event);
+        res.send(year);
     }catch(error){
         next(error)
     };
 });
 
-// event/create
+// year/create
 router.post('/create',async(req,res,next)=>{
-    const artist = req.body.artist;
-    const venue = req.body.venue;
-    const dayId = req.body.dayId;
-    const monthId = req.body.monthId;
+    const date = req.body.date;
     try{
-        await Event.create({
-            artist:artist,
-            venue:venue,
-            monthId:monthId,
-            dayId:dayId
+        const newYear = await Year.create({
+            date:date,
         });
         res.sendStatus(201);
     }catch(error){

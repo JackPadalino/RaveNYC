@@ -5,10 +5,6 @@ const {
     Month,Day,Event
 } = require('../db');
 
-// Routes to make
-// view view day and all events
-// create
-
 // day/:id
 router.get('/:id',async(req,res,next)=>{
     const dayId = req.params.id;
