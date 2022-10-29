@@ -9,3 +9,13 @@ Calendar app for all electronic events happening in NYC by month
     - MUI React components (similar to Bootstrap)
     - 'exact' keyword for establish routes in React to avoid conflicts
     - 'create-react-app' command for setup
+
+
+const month = [[],[],[],[],[],[]];
+for(const week of month){
+    for(let i=1;i<8;i++){
+        week.push(i);
+    };
+};
+
+console.log(month);
