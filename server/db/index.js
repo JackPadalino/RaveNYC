@@ -1,25 +1,33 @@
 const db = require('./db');
-const Year = require("./Year");
+//const Year = require("./Year");
 const Month = require("./Month");
 const Day = require("./Day");
 const Event = require("./Event");
 
+// Year.hasMany(Month,{
+//   onDelete:'CASCADE'
+// });
+// Month.belongsTo(Year);
 
-Month.belongsTo(Year);
-Year.hasMany(Month);
-
+Month.hasMany(Day,{
+  onDelete:'CASCADE'
+})
 Day.belongsTo(Month)
-Month.hasMany(Day)
 
+Month.hasMany(Event,{
+  onDelete:'CASCADE'
+});
 Event.belongsTo(Month);
-Month.hasMany(Event);
 
+Day.hasMany(Event,{
+  onDelete:'CASCADE'
+});
 Event.belongsTo(Day);
-Day.hasMany(Event);
+
 
 module.exports = {
   db,
-  Year,
+  //Year,
   Month,
   Day,
   Event

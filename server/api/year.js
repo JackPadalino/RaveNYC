@@ -43,4 +43,19 @@ router.post('/create',async(req,res,next)=>{
     };
 });
 
+// year/delete/:id
+router.delete('/delete/:id',async(req,res,next)=>{
+    const yearId = req.params.id;
+    try{
+        await Year.destroy({
+            where:{
+                id:yearId
+            }
+        });
+        res.sendStatus(200);
+    }catch(error){
+        next(error)
+    };
+});
+
 module.exports = router;
