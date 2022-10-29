@@ -18,7 +18,7 @@ const Month = db.define("month", {
             'November',
             'December'
         ],
-        allowNull: false
+        allowNull: false,
     }
 });
 
