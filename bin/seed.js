@@ -8,7 +8,7 @@ const seedDB=async()=>{
     // Year instances
     const years = [
         {date:'2022'},
-        {date:'1984'},
+        {date:'2023'},
     ];
     const yearPromises = years.map((year)=>Year.create(year));
     const [year_2022] = await Promise.all(yearPromises);
@@ -18,15 +18,6 @@ const seedDB=async()=>{
         {date:'January',yearId:year_2022.id},
         {date:'February',yearId:year_2022.id},
         {date:'March',yearId:year_2022.id},
-        {date:'April',yearId:year_2022.id},
-        {date:'May',yearId:year_2022.id},
-        {date:'June',yearId:year_2022.id},
-        {date:'July',yearId:year_2022.id},
-        {date:'August',yearId:year_2022.id},
-        {date:'September',yearId:year_2022.id},
-        {date:'October',yearId:year_2022.id},
-        {date:'November',yearId:year_2022.id},
-        {date:'December',yearId:year_2022.id}
     ];
     const monthPromises = months.map((month)=>Month.create(month));
     const [january_2022,february_2022,march_2022] = await Promise.all(monthPromises);
@@ -61,7 +52,7 @@ const seedDB=async()=>{
     // Event instances
     const events = [
         {artist:'Township Rebellion',venue:'Brooklyn Monarch',dayId:january_01_2022.id,monthId:january_2022.id},
-        {artist:'Snerd',venue:'Brooklyn Monarch',dayId:january_02_2022.id,monthId:january_2022.id},
+        {artist:'Snerd',venue:'Brooklyn Monarch',dayId:january_01_2022.id,monthId:january_2022.id},
         {artist:'DJ Sasha',venue:'Avante Gardner',dayId:february_01_2022.id,monthId:february_2022.id},
         {artist:'Modern Bohemia',venue:'Avante Gardner',dayId:february_02_2022.id,monthId:february_2022.id},
         {artist:'Anjuna Deep',venue:'Brooklyn Mirage',dayId:march_01_2022.id,monthId:march_2022.id},
